@@ -1,0 +1,68 @@
+VOICECLONE X SETUP GUIDE
+
+(main_setup_module.py)
+Script for step 1, 2, and 3.
+
+Initial Instructions:
+
+• Informs the user to ensure Python 3.10.11 and Microsoft C++ Build Tools are installed, providing links for installation.
+• Waits for user confirmation before proceeding.
+
+1. Change Command Prompt Execution Policy:
+
+• Retrieves and displays the current PowerShell execution policy.
+• Allows the user to set the policy to Restricted if it's currently RemoteSigned, and optionally reset it back.
+• Provides feedback based on the success or failure of setting the policy.
+
+2. Create a Virtual Environment:
+
+• Asks the user if they want to create a virtual environment.
+• Creates a virtual environment in a specified directory and optionally installs a set of predefined packages.
+• Displays a loading bar during package installation and purges the pip cache.
+
+3. Activate Virtual Environment:
+
+• Lists available virtual environments in a directory.
+• Prompts the user to select an environment and then activates it.
+• Executes a specified script within the activated environment.
+
+(Voiceclonex APP.py)
+Script for step 5, 6, 7, 8, and 9.
+
+4. Install Project Dependencies:
+
+• Prompts the user to confirm before downloading and installing necessary files.
+• Downloads a ZIP file from a URL, extracts its contents, and moves folders as needed.
+• Deletes the ZIP file after extraction.
+
+5. Create a Dataset:
+
+• Asks the user for input on segment duration and the path to a WAV file.
+• Segments the WAV file into smaller chunks and saves them.
+• Copies the original audio to a saved audio directory.
+
+6. Preprocess Data:
+
+• Requests user confirmation and model name.
+• Checks if the dataset folder is populated.
+• Creates a logs directory and runs a preprocessing script.
+• Checks for successful preprocessing based on log content.
+
+7. Extract Features:
+
+• Asks for user confirmation, model name, and feature extraction method.
+• Runs feature extraction scripts and logs the process.
+• Verifies successful feature extraction based on log content.
+
+8. Train Index:
+
+• Prompts the user for model name and trains an index using FAISS.
+• Handles feature clustering and indexing, and logs the process.
+
+9. Train Model:
+
+• Prompts for model training parameters like save frequency, epochs, batch size, and GPU count.
+• Provides options for resuming training with pre-existing files or starting fresh.
+• Saves the trained model as a ZIP file containing the index and weights
+
+
