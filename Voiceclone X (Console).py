@@ -24,7 +24,7 @@ def main():
         print("Operation cancelled.")
         return
 
-    base_dir = r"C:\Voiceclone X\environments"
+    base_dir = r"/home/runner/VoicecloneX/environments"
     os.makedirs(base_dir, exist_ok=True)
 
     env_name = input("Enter the name for the virtual environment: ")
@@ -142,7 +142,7 @@ import subprocess
 import sys
 
 # Path to the environments directory
-ENVIRONMENTS_DIR = r"C:\Voiceclone X\environments"
+ENVIRONMENTS_DIR = r"/home/runner/Voiceclone X/environments"
 
 # Function to list available virtual environments
 def list_virtual_environments(environments_dir):
@@ -194,7 +194,7 @@ def main():
     activate_script = os.path.join(VIRTUAL_ENVIRONMENT_DIR, "Scripts", "activate.bat")
 
     # Path to the script to run
-    script_to_run = r"C:\Voiceclone X\apps\voiceclonex APP.py"
+    script_to_run = r"/home/runner/Voiceclone X/apps/voiceclonex APP.py"
 
     # Display selected environment
     print(f"Selected virtual environment: {selected_env}")
@@ -233,8 +233,8 @@ else:
 
     # URL and local paths
     zip_url = "https://huggingface.co/datasets/lilbotai/RVC_Installer/resolve/main/RVC.zip?download=true"
-    zip_file_path = r"C:\RVC\RVC.zip"
-    extracted_folder_path = r"C:\RVC"
+    zip_file_path = r"/home/runner/RVC/RVC.zip"
+    extracted_folder_path = r"/home/runner/RVC"
 
     # Create the directory if it doesn't exist
     os.makedirs(extracted_folder_path, exist_ok=True)
@@ -324,7 +324,7 @@ def main():
     segment_wav(input_file_path, output_folder_path, segment_duration_seconds)
     
     # Copy the voice audio to the specified path
-    saved_audios_path = r"C:\RVC\content\saved_audios"
+    saved_audios_path = r"/home/runner/RVC/content/saved_audios"
     os.makedirs(saved_audios_path, exist_ok=True)
     shutil.copy2(input_file_path, saved_audios_path)
     print(f"Saved {input_file_path} to {saved_audios_path}")
@@ -343,8 +343,8 @@ if user_input != 'y':
     print("Operation cancelled.")
 else:
     # Data Preparation
-    os.chdir(r'C:\RVC\content\project-main')
-    dataset_folder = r'C:\RVC\content\dataset'  # Dataset folder path
+    os.chdir(r'/home/runner/RVC/content/project-main')
+    dataset_folder = r'/home/runner/RVC/content/dataset'  # Dataset folder path
 
     # Get the list of models (subdirectories) in the dataset folder
     models = [d for d in os.listdir(dataset_folder) if os.path.isdir(os.path.join(dataset_folder, d))]
@@ -393,7 +393,7 @@ user_input = input("Extract Features? (Y/N): ").strip().lower()
 
 if user_input == 'y':
     # Define the main path
-    main_path = r'C:\RVC\content\project-main'
+    main_path = r'/home/runner/RVC/content/project-main'
 
     # Get the list of logs (subdirectories) in the logs folder
     logs_folder = os.path.join(main_path, 'logs')
@@ -411,7 +411,7 @@ if user_input == 'y':
         model_name = models[model_choice - 1]  # Get the selected model name
 
         # Define the dataset folder path based on the model_name input
-        dataset_path = os.path.join(r'C:\RVC\content\dataset', model_name)
+        dataset_path = os.path.join(r'/home/runner/RVC/content/dataset', model_name)
 
         # Present options for f0method
         f0methods = ['pm', 'harvest', 'rmvpe', 'rmvpe_gpu']
@@ -477,7 +477,7 @@ if user_input != 'y':
     print("Operation cancelled.")
 else:
     def train_index(model_name):
-        main_path = r"C:\RVC\content\project-main"
+        main_path = r"/home/runner/RVC/content/project-main"
         exp_dir = os.path.join(main_path, "logs", model_name)
         os.makedirs(exp_dir, exist_ok=True)
 
@@ -561,7 +561,7 @@ else:
         )
 
     # Define the main path
-    main_path = r'C:\RVC\content\project-main'
+    main_path = r'/home/runner/RVC/content/project-main'
 
     # Get the list of logs (subdirectories) in the logs folder
     logs_folder = os.path.join(main_path, 'logs')
@@ -598,8 +598,8 @@ import zipfile
 # Function to save the model as a zip file
 def save_model_as_zip(model_name):
     # Define main paths
-    main_path = r"C:\RVC\content\project-main"
-    saved_models_path = r"C:\RVC\content\saved_models"
+    main_path = r"/home/runner/RVC/content/project-main"
+    saved_models_path = r"/home/runner/RVC/content/saved_models"
     
     # Define file paths
     index_file_dir = os.path.join(main_path, "logs", model_name)
@@ -636,7 +636,7 @@ def save_model_as_zip(model_name):
 
 # Function to list available models
 def list_available_models():
-    logs_path = r"C:\RVC\content\project-main\logs"
+    logs_path = r"/home/runner/RVC/content/project-main/logs"
     models = [d for d in os.listdir(logs_path) if os.path.isdir(os.path.join(logs_path, d)) and d != 'mute']
     return models
 
@@ -673,7 +673,7 @@ else:
         print("No model selected. Operation cancelled.")
     else:
         # Define main path
-        main_path = r'C:\RVC\content\project-main'
+        main_path = r'/home/runner/RVC/content/project-main'
         os.chdir(main_path)
         now_dir = os.getcwd()
 
