@@ -1,22 +1,16 @@
-#Initial Instructions
+# Initial Instructions
 
 import os
-import msvcrt
 
-# ANSI escape code for light blue text
-LIGHT_BLUE = "\033[94m"
-RESET = "\033[0m"
-
-print(LIGHT_BLUE + "Must Have Python 3.10 and C++ Build Tools Installed" + RESET)
+# Print instructions
+print("Must Have Python 3.10 and C++ Build Tools Installed")
 print("1. Download Python 3.10 from the [Microsoft Store](https://www.microsoft.com/store/productId/9PJPW5LDXLZ5).")
 print("2. Download C++ Build Tools from [Visual Studio](https://visualstudio.microsoft.com/visual-cpp-build-tools/).")
 print("3. Run the installer, select 'Desktop Development with C++', and complete the installation.")
 print("4. Now you can proceed with Voiceclone X.")
-print("Press any key to continue...")
+input("Press Enter to continue...")  # Waits for the user to press Enter
 
-msvcrt.getch()  # Waits for any key press
-
-#1. Create a Virtual Environment
+# 2. Create a Virtual Environment
 
 import os
 import subprocess
@@ -36,7 +30,7 @@ def main():
     env_name = input("Enter the name for the virtual environment: ")
     env_path = create_virtual_environment(base_dir, env_name)
 
-    install_packages_prompt = input("would you like to install the requirements for voice cloning? (Y/N): ").strip().lower()
+    install_packages_prompt = input("Would you like to install the requirements for voice cloning? (Y/N): ").strip().lower()
     if install_packages_prompt == 'y':
         packages = [
             "fairseq==0.12.2",
@@ -141,7 +135,7 @@ def delete_user_cache():
 if __name__ == "__main__":
     main()
 
-#2. Activate Virtual Environment
+# 3. Activate Virtual Environment
 
 import os
 import subprocess
